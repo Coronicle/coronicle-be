@@ -6,7 +6,7 @@ contact to someone infected.
 
 It is a Standard Spring Boot Application using MySql database.
 
-Frontend: [found here](https://github.com/Coronicle/coronicle-be) - react native app
+Frontend: [found here](https://github.com/Coronicle/coronicle-fe) - react native app
 
 ## Endpoints
 
