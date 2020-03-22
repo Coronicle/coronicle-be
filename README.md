@@ -34,3 +34,7 @@ A swagger API description can be found by navigating to  `/swagger-ui.html` with
 You need **Java 13** to run and build this application.
 
 Execute `./mvnw clean install` to build the project.
+
+## Building and running the application with docker
+
+Alternatively you can execute `docker-compose up --build` to spin up the application and the database as docker containers.
