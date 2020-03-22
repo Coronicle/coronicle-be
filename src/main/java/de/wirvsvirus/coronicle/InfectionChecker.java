@@ -4,16 +4,21 @@ import de.wirvsvirus.coronicle.db.model.InfectedPoint;
 
 import java.util.List;
 
+import java.time.Duration;
+
+
 public class InfectionChecker {
 
     //TODO: we need to specify this number!
     private static final double MAGIC_NUMBER = 10;
+    private static final int VIRUS_IN_AIR_HOURS = 3;
+
 
     //TODO: optimize
     public static boolean check(List<InfectedPoint> userTrace, List<InfectedPoint> dataBaseTrace) {
         for (InfectedPoint userLocation : userTrace) {
             for (InfectedPoint dataBaseLocation : dataBaseTrace) {
-                if (wasInSameArea(userLocation, dataBaseLocation)) {
+                if (wasInSameTime(userLocation, dataBaseLocation) && wasInSameArea(userLocation, dataBaseLocation)) {
                     return true;
                 }
             }
@@ -32,4 +37,9 @@ public class InfectionChecker {
         return (EARTH_RADIUS * c * 1000) < MAGIC_NUMBER;
     }
 
+    private static boolean wasInSameTime(InfectedPoint userLocation, InfectedPoint dataBaseLocation) {
+        return Duration.between(userLocation.getTime(), dataBaseLocation.getTime()).compareTo(Duration.ofHours(VIRUS_IN_AIR_HOURS)) < 0;
+    }
 }
+
+
