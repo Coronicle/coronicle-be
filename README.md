@@ -27,6 +27,7 @@ Used to check if given location history has the possibility to be infected by co
       [{"lat":37.33165776,"lon":-122.03069996,"time":"2020-03-21T19:55:28.179Z"},    {"lat":37.331656,"lon":-122.03069996,"time":"2020-03-21T19:55:28.179Z"}]
    ``` 
 
+A swagger API description can be found by navigating to  `/swagger-ui.html` with a web browser.
 
 ## Building the application
 
